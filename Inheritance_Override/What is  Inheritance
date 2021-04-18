@@ -1,0 +1,9 @@
+What is Inheritance?
+ 
+> Inheritance is a method in programming
+ 
+> In Java every object has a type and class
+ 
+> If we have automobile and bicycle, and if we wanted to write a code, we can
+   use a super class that includes all common properties and we can use
+   these code blocks in subclass by extending

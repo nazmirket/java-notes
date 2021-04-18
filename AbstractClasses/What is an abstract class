@@ -1,0 +1,8 @@
+>>What is an Abstact class ?
+
+    > Abstract class can include both abstract methods and normal methods
+     
+    > If a method is used in all subclasses, it is more practical that giving a body to it
+       in abstract class
+    
+    > Abstract classes cannot be instantiated, we cannot create object from these classes  

@@ -1,0 +1,135 @@
+* What is a regular expression?
+
+   - Regular expression is a pattern that described before to compare the input
+   - The "Basics.java" file explains creating and comparing patterns
+   - ex: ".s" -> this pattern is identifyed with any of these "as", "Ss", "5s"
+   - The dot can be identyfied with any character.
+   - Here the other predefined character classes,
+   
+          					  . 	   Any character
+        					\d 	   A digit: [0-9]
+        					\D 	   A non-digit: [^0-9]
+       						\s 	   A whitespace character: [ \t\n\x0B\f\r]
+        					\S 	   A non-whitespace character: [^\s]
+        					\w 	   A word character: [a-zA-Z]
+        					\W 	   A non-word character: [^\w]
+        					
+* The Character Classes : 
+        					
+					[abc] 							a, b, or c (simple class)
+					[^abc] 						Any character except a, b, or c (negation)
+					[a-zA-Z] 					a through z, or A through Z, inclusive (range)
+					[a-d[m-p]] 				a through d, or m through p: [a-dm-p] (union)
+					[a-z&&[def]] 			d, e, or f (intersection)
+					[a-z&&[^bc]] 			a through z, except for b and c: [ad-z] (subtraction)
+					[a-z&&[^m-p]] 		a through z, and not m through p: [a-lq-z] (subtraction)
+					
+					
+		* Pattern examples : 			
+
+    		 1) Pattern pattern1 = Pattern.compile( " [abc]def " );
+     			
+     			"cdef" , "adef"  = true
+     			"wdef", "qdef" = false
+     
+     		2) Pattern pattern1 = Pattern.compile( " [^abc]def " );
+     
+     			"gdef", "zdef"... = true
+     			"adef", "cdef"    = false
+     
+     		3) Pattern pattern1 = Pattern.compile( " [a-zA-Z]b " );
+     
+     			 "ab", "cb", "zb" = true
+     			 "$b", "*b",","?b" = false
+     			 
+     			 
+    
+    
+* What are the Quantifiers?
+
+		Quantifiers are used to get more information from querying for instance how
+	   many times the pattern repeated.
+	   
+	   		Quantifier			Meaning
+				X?  					X, once or not at all
+				X* 					X, zero or more times
+				X+ 					X, one or more times
+				X{n} 				X, exactly n times
+				X{n,} 				X, at least n times
+				X{n,m} 			X, at least n but not more than m times
+				
+		Example =>
+		
+		input: aaa		
+					
+		regex: a?					output : "a", "a", "a", ""
+		regex: a*					output : "aaa", ""
+		regex: a+					output : "aaa"
+		
+			# note : first two also found a zero-length match
+			
+			
+
+* Boundary Matchers:
+		
+		Also the boundries are used to compare the specific part of the file with the input
+
+			Boundary 		Description
+				^ 					The beginning of a line
+				$ 					The end of a line
+				\b 				A word boundary
+				\B 				A non-word boundary
+				\A 				The beginning of the input
+				\G 				The end of the previous match
+				\Z 				The end of the input but for the final terminator, if any
+				\z 				The end of the input			
+		
+		
+			Example 1 =>
+		
+				regex1 : \bdog\b
+				
+				input1 : The dog plays in the yard.
+				input2 : The doggie plays in the yard.  =>regex1b : \bdof\B,   output2b : "doggie"
+				
+				output1 : "dog"
+				output2 : not match found!
+				
+				
+			Example 2 =>
+				
+				regex1 : ^dog$
+				
+				input1 : dog
+				input2 : cute dog
+				
+				output1 : "dog"
+				output2 : No match found.
+				
+* What are the Pattern Flags?
+		
+		The flags determines the comparing rules
+		
+			Pattern.CASE_INSENSITIVE
+			Pattern.COMMENTS
+			Pattern.LITERAL
+			Pattern.MULTILINE
+			Pattern.UNIX_LINES
+		
+			these are the some of them this topic is explained in the file "PatternWithFlags.java"
+			
+			
+			
+* The Matcher class :
+	
+		The Matcher class has a few methods that might be helpful while working with the Regexs
+	  the file "MethodsOfMatcherClass.java" is where these methods are explained.			
+
+
+
+
+
+
+
+
+		

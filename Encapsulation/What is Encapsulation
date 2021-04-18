@@ -1,0 +1,12 @@
+>>What is Encapsulation ?
+
+    > Encapsulation is a way to give partial access to others to a property
+    
+    > If we don't want other blocks to change the variable without limitation
+       we can use encapsulation
+       
+    > As mentioned before, in OOP, the getter and setters are used to give access 
+        to some people to private properties  
+        
+    > If we control the setter method with conditionals, the variable can take only some values
+       that we wanted.

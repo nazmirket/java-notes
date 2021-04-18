@@ -1,0 +1,16 @@
+>>What is an Interface ?
+
+    > An interface is a contract that includes the functions will be used
+     
+    > All methods are abstract in an interface except the statics and defaults so "abstract" keyword is unnecessary
+    
+    > We can't create an object from an interface
+    
+    > An interface can be extended from more than one interface
+    
+    > A class can implement more than one interface
+    
+    > The Interface's abstract methods can get a body at where they implemented 
+    
+    > When adding something to interface is needed we should create default methods 
+       or new interfaces that extends the older one!!

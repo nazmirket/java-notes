@@ -1,0 +1,50 @@
+* What is Concurrency?
+   - The systems that able to do more than one thing at a time called concurrent systems.
+
+* What is a Thread?
+   - Simply means that the small parts of a proccess.
+   - A proccess has at least one thread and so there might be more than one.
+   - Thread class implements Runnable interface and this interface has only one method " void run () ".
+   - Thread runs this method when the method " thread1.start()" invoked.
+   - "CreatingAThread.java" document explains how to create a new thread. 
+   - Basic methods are explained in the file "BasicMethods.java"
+
+* What is "join()" method for?
+   - This method is used to keep waiting some thread until the other one is done
+   - The example in the file "JoinMethod.java" would be more helpful to understand
+
+* Possible Errors about Threads:
+    > Thread Interference : It occurs when more than one threads try to get access to same resource
+    > Memory Consistency Error : These occur when different threads have inconsistent views of 
+    what should be the same data. To avoid this error the happens-before relationship is created.
+
+* What is a Synchronized Method?
+   - The methods that declared with "synchronized" keyword caled "synchronized methods".
+   - These methods cannot be running in two different thread at the same time
+   - If one thread is using this method the other one waits it to finish
+   - Even you have two different "synchronized" methods only one of them is executed at a time(^)
+   - "SynchronizedMethods.java" document includes an example about this concept
+   
+* What is a Synchronized Statement?
+   - Because of the situation about synchronized methods described in fourth one above(^). Even we have
+      to seperate object we can't use them at the same time with synchronized methods
+    - Synchronized statements lock a specific object so we can use seperate objects, this is a good way to
+       improve concurrency. This concept called "fine-grained synchronization"
+    - For more explanation with examples "SynchronizedStatements.java"
+    
+    
+* Some terms about concurrency:
+    >Volatile Keyword : the variables that declared with this keyword are kept in the ram periodical and in this way
+       the value that the variable has is becoming visible for other threads
+    >Intrinsic lock : the way that the synchronized method lock others. In this type of lock the other threads doesn't keep working
+       even they don't use that synchronised method.
+    >Wait() and Notify() : These two methods used for the synchronization between two threads. When the one invokes
+       wait() method the lock is released and the other one is starts running and when the other one invokes notify() method,
+       the first one waits until the second one is done and keeps running. For more explanation "WaitAndNotify.java"      
+          
+   
+   
+   
+   
+   
+   
